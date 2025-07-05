@@ -1,7 +1,6 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-}
+  output: 'export', // wichtig für statische Export-Builds
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

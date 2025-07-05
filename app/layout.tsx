@@ -1,8 +1,8 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Cooles Portfolio',
-  description: 'Modernes Portfolio mit coolen Scroll-Animationen',
+  title: 'Teen-Portfolio',
+  description: 'Check out my work',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
