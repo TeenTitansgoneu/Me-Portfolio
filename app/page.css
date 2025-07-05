@@ -1,0 +1,187 @@
+/* === Scrollbar ausblenden === */
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* === Hintergrund mit Animation === */
+body {
+  background: linear-gradient(130deg, #0e0e0e 0%, #00111c 50%, #051e2a 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 25s ease infinite;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Sterne-Overlay === */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20% 40%, #00bfff 30%, transparent 30%),
+    radial-gradient(2px 2px at 80% 60%, #00bfff 30%, transparent 30%),
+    radial-gradient(1.5px 1.5px at 50% 80%, #00ffff 30%, transparent 30%);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: starMove 60s linear infinite;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes starMove {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-400px); }
+}
+
+/* === Layout === */
+.home {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3 {
+  color: #00bfff;
+  margin-bottom: 1rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0.5rem auto;
+}
+
+.ai-text {
+  font-style: italic;
+  color: #888;
+  margin-top: 1.5rem;
+}
+
+.projects h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-left: 4px solid #00bfff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 191, 255, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 6px 30px rgba(0, 191, 255, 0.35);
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.project-card .tag {
+  display: inline-block;
+  background: #003344;
+  color: #00ffff;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.project-card .tag:hover {
+  background: #005f70;
+}
+
+.contact {
+  margin-top: 4rem;
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid #00ffcc;
+  text-align: center;
+}
+
+.contact p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.portfolio-offer {
+  margin-top: 1.5rem;
+  color: #a0eaff;
+  font-style: italic;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* === Discord Profil === */
+.discord-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.discord-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid #00bfff;
+}
+
+.discord-info {
+  color: #00bfff;
+  font-weight: 600;
+}
+
+.discord-name {
+  font-size: 1.25rem;
+  margin: 0;
+}
